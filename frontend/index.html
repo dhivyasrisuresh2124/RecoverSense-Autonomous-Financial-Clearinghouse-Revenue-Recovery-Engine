@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="RecoverSense — explainable, liquidity-aware payment recovery operations console." />
+  <title>RecoverSense · Recovery Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="fintech.css" />
+</head>
+<body>
+  <div id="toast-root" class="toast-stack"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand" onclick="go('dashboard')">
+        <div class="brand-mark"><span>R</span><i></i></div>
+        <div><div class="brand-name">RecoverSense</div><div class="brand-sub">Recovery intelligence</div></div>
+      </div>
+      <div class="mode-pill"><span class="pulse"></span><span id="mode-label">DEMO ENVIRONMENT</span></div>
+      <nav id="nav" class="nav">
+        <div class="nav-group-label">OPERATIONS</div>
+        <button class="nav-item" data-route="dashboard"><span class="icon">⌂</span><span>Command center</span></button>
+        <button class="nav-item" data-route="opportunities"><span class="icon">◈</span><span>Opportunities</span><b id="nav-count">—</b></button>
+        <button class="nav-item" data-route="simulator"><span class="icon">▷</span><span>Decision simulator</span></button>
+        <div class="nav-group-label">INTELLIGENCE</div>
+        <button class="nav-item" data-route="evaluation"><span class="icon">◒</span><span>Evaluation lab</span></button>
+        <button class="nav-item" data-route="audit"><span class="icon">⌁</span><span>Audit ledger</span></button>
+        <button class="nav-item" data-route="failures"><span class="icon">⚡</span><span>Failure lab</span></button>
+        <div class="nav-group-label">CONTROL</div>
+        <button class="nav-item" data-route="settings"><span class="icon">⚙</span><span>System settings</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-card">
+          <div class="status-line"><span id="api-dot" class="status-dot"></span><span id="api-status">API checking…</span></div>
+          <div class="status-line"><span id="ai-dot" class="status-dot"></span><span id="ai-status">AI checking…</span></div>
+          <div class="mini-url"><span>Backend</span><code id="backend-label">localhost:8000</code></div>
+        </div>
+        <div class="disclosure">SYNTHETIC CONTROLLED EVALUATION</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu">☰</button>
+        <div class="crumbs"><span>RecoverSense</span><span>/</span><strong id="crumb-current">Command center</strong></div>
+        <div class="top-actions">
+          <span class="live-dot"><i></i>System live</span>
+          <button class="icon-btn" title="Refresh" id="refresh-btn">↻</button>
+        </div>
+      </header>
+      <section id="view-root" class="view-root"></section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

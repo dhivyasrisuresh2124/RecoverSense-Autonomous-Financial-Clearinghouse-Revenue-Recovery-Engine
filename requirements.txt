@@ -1,0 +1,29 @@
+# RecoverSense runtime dependencies — deterministic pins.
+# Versions below were installed and validated against this codebase.
+# Do not loosen pins: builds must be reproducible.
+
+# Core API
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+sqlalchemy==2.0.35
+
+# Data / ML (validated offline against this codebase)
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.7.2
+
+# Optional integrations
+anthropic==1.2.0        # only needed if ANTHROPIC_API_KEY is set for the AI Context Reasoner
+requests==2.34.2       # only needed for the Razorpay Test Mode read-state adapter
+
+# PostgreSQL driver — required only when DATABASE_URL is a postgresql:// URL.
+# SQLite (the single-instance default) does not use it.
+psycopg2-binary==2.9.10
+
+# Testing (runtime images do not need to run the suite, but keep installable
+# for the documented `python -m unittest` workflow)
+pytest==9.1.1
+# Required by starlette's TestClient for endpoint-level tests
+# (webhook signature + webhook→agent-runtime lifecycle).
+httpx==0.27.2
