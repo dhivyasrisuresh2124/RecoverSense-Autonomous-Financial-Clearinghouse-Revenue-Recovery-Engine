@@ -1,0 +1,20 @@
+# Backward compatibility alias for agent loop
+from agent.runtime import (
+    process_event_through_pipeline,
+    AgentRuntime,
+    AgentLifecycleLogger,
+    get_agent_runtime,
+    STAGE_EVENT_RECEIVED,
+    STAGE_OPPORTUNITY_CREATED,
+    STAGE_FAILURE_DIAGNOSED,
+    STAGE_UNDERWRITING_COMPLETED,
+    STAGE_STRATEGIES_EVALUATED,
+    STAGE_ACTION_SELECTED,
+    STAGE_POLICY_CHECK,
+    STAGE_PROVIDER_STATE_VERIFIED,
+    STAGE_EXECUTION_ATTEMPTED,
+    STAGE_OUTCOME_OBSERVED,
+    STAGE_LEARNING_UPDATED,
+    STAGE_AUDIT_COMMITTED,
+    ALL_LIFECYCLE_STAGES,
+)
